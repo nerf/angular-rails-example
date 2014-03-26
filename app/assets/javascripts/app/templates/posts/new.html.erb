@@ -1,0 +1,6 @@
+<h1>New post</h1>
+<h3 ng-if="post.title"> - {{post.title}}<h3>
+
+<div ng-include="'<%= asset_path('app/templates/posts/_form.html') %>'"></div>
+
+<a href='#/'>Back</a>

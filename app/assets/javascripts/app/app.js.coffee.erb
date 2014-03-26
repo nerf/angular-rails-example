@@ -1,0 +1,19 @@
+#= require ./base
+#= require_tree .
+#= require_self
+
+angular.module('app', [
+  'ngRoute'
+  'ngResource'
+  # 'app.factories',
+  'app.services',
+  'app.directives',
+  # 'app.filters',
+  'app.controllers'
+]).
+config ['$routeProvider', ($routeProvider) ->
+  $routeProvider.when '/', templateUrl: '<%= asset_path("app/templates/posts/index.html") %>', controller: 'Posts'
+  $routeProvider.when '/posts/new', templateUrl: '<%= asset_path("app/templates/posts/new.html") %>', controller: 'NewPost'
+  $routeProvider.when '/posts/:id', templateUrl: '<%= asset_path("app/templates/posts/edit.html") %>', controller: 'EditPost'
+  $routeProvider.otherwise redirectTo: '/'
+]

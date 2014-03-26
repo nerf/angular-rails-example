@@ -1,0 +1,15 @@
+<div ng-include="'<%= asset_path('app/templates/shared/_errors.html') %>'"></div>
+
+<div class="field">
+  <label for="title">Title</label><br>
+  <input type="text" id="title" ng-model="post.title" />
+</div>
+<div class="field">
+  <label for="body">Body</label><br>
+  <input type="text" id="body" ng-model="post.body" />
+</div>
+<div class="actions">
+  <button class="btn btn-primary" ng-click="submit()">
+    Submit
+  </button>
+</div>
